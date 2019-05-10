@@ -69,7 +69,8 @@ protected:
     const auto& hosts = proto.host_addresses();
     std::string buf;
 
-    for (const auto& host: hosts) {
+    for (const auto& pair: hosts) {
+      std::__cxx11::basic_string<char> host = pair.first;
       const char *addr = host.c_str();
       unsigned int plen = 0;
 
